@@ -9,20 +9,24 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "service-worker.js",
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.ts",
+      "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
+      "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "mobile": false,
       "styles": [
         "styles.css"
       ],
       "scripts": [],
+      "environmentSource": "environments/environment.ts",
       "environments": {
-        "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
@@ -40,6 +44,17 @@
       "config": "./karma.conf.js"
     }
   },
+  "lint": [
+    {
+      "project": "src/tsconfig.json"
+    },
+    {
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
+    }
+  ],
   "defaults": {
     "styleExt": "css",
     "prefixInterfaces": false,
