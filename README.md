@@ -1,7 +1,12 @@
 # Angular 2 Project
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli)
-[![Join the chat at https://gitter.im/angular/angular-cli](https://badges.gitter.im/angular/angular-cli.svg)](https://gitter.im/angular/angular-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+<p align="center">
+  <a href="https://angular2-516a4.firebaseapp.com/" target='_blank'>
+    <img alt="Angular2 Logo" title="Logo" src="http://res.cloudinary.com/mally/image/upload/v1490186051/Angular_spree_hqgwtq.png" width="200">
+  </a>
+</p>
 
 ## Development server
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
