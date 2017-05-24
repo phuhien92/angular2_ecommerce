@@ -4,7 +4,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 <p align="center">
   <a href="https://angular2-516a4.firebaseapp.com/" target='_blank'>
-    <img alt="Angular2 Logo" title="Logo" src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiu8YT2kInUAhUHxWMKHSQ7AjcQjRwIBw&url=https%3A%2F%2Fwww.icongod.com%2Ficons%2Fdemo-icon-icons.html&psig=AFQjCNEEsBitwGrbLkjGeocCW2YSnGhT3A&ust=1495735963753155" width="100">
+    <img alt="Angular2 Logo" title="Logo" src="http://teachstone.com/wp-content/themes/enfold-child/images/myteachstone/icon-live-demo.png" width="100">
   </a>
 </p>
 
