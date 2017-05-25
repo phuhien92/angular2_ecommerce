@@ -18,9 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
     this.router
     .events
-    .filter(
-      e => e instanceof NavigationEnd
-    )
     .subscribe((e: NavigationEnd) => {
       this.currentUrl = e.url;
       this.findCurrentStep(this.currentUrl);

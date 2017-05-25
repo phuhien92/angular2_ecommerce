@@ -18,6 +18,7 @@ import { HomeModule } from './home/home.module';
     AppComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     HttpModule,
