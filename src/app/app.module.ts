@@ -11,7 +11,19 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
 // Modules
+import { CoreModule } from './core/core.module';
+import { StoreModule } from '@ngrx/store';
 import { HomeModule } from './home/home.module';
+import { reducer } from './app.reducers';
+
+// adding rx operators
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/finally';
+import 'rxjs/add/observable/of';
 
 @NgModule({
   declarations: [
@@ -19,9 +31,11 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     RouterModule.forRoot(routes),
+    StoreModule.provideStore(reducer),
     BrowserModule,
     FormsModule,
     HttpModule,
+    CoreModule,
     HomeModule
   ],
   providers: [],

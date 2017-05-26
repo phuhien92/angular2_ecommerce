@@ -15,9 +15,10 @@ export class HomeComponent implements OnInit {
     products$: Observable<any>;
 
     constructor(
-
+        private store: Store<AppState>,
+        private actions: ProductActions
     ) {
-
+        this.store.dispatch(this.actions.getAllProducts());
     }
 
     ngOnInit() {

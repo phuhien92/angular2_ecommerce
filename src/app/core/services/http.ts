@@ -5,15 +5,15 @@
  */
 import { Injectable } from '@angular/core';
 import {
-  Http,
-  ConnectionBackend,
-  RequestOptions,
-  RequestOptionsArgs,
-  Response,
-  Headers,
-  Request
+    Http,
+    ConnectionBackend,
+    RequestOptions,
+    RequestOptionsArgs,
+    Response,
+    Headers,
+    Request
 } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import { environment } from './../../../environments/environment';
 import { Subject } from 'rxjs/Subject';
 
@@ -28,26 +28,27 @@ export class HttpService extends Http {
         super(backend, defaultOptions);
     }
 
-    get(url: string, options?:RequestOptionsArgs): Observable<any> {
-       this.requestInterceptor();
-       return super.get(this.getFullUrl(url), this.requestOptions(options))
-       .do((res: Response) => {
-           this.onSubscribeSuccess(res);
-       }, (error: any) => {
-           console.log("Error",error);
-       })
-       .finally(() => {
-           this.onFinally();
-       }) 
-    }   
+    get(url: string, options?: RequestOptionsArgs): Observable<any> {
+    this.requestInterceptor();
+    return super.get(this.getFullUrl(url), this.requestOptions(options))
+      .catch(this.onCatch.bind(this))
+      .do((res: Response) => {
+        this.onSubscribeSuccess(res);
+      }, (error: any) => {
+        this.onSubscribeError(error);
+      })
+      .finally(() => {
+        this.onFinally();
+      });
+  }
 
-/**
-   * Request options.
-   * @param options
-   * @returns {RequestOptionsArgs}
-   */
+    /**
+       * Request options.
+       * @param options
+       * @returns {RequestOptionsArgs}
+       */
 
-    private requestOptions(options?: RequestOptions): RequestOptionsArgs {
+    private requestOptions(options?: RequestOptionsArgs): RequestOptionsArgs {
         if (options == null) {
             options = new RequestOptions;
         }
@@ -59,30 +60,32 @@ export class HttpService extends Http {
                 'X-Spree-Token': user && user.spree_api_key
             })
         }
+
+        return options;
     }
 
     /**
    * Request interceptor.
    */
-   
+
     private requestInterceptor(): void {
         console.log('Sending Request');
         // this.loaderService.showPreloader();
         this.loading.next({
-         loading: true, hasError: false, hasMsg: ''
+            loading: true, hasError: false, hasMsg: ''
         });
     }
 
     private responseInterceptor(): void {
         console.log('Request Complete');
-    }    
+    }
 
-private onSubscribeSuccess(res: Response): void {
-    this.loading.next({
-      loading: false, hasError: false, hasMsg: ''
-    });
-  }
-  
+    private onSubscribeSuccess(res: Response): void {
+        this.loading.next({
+            loading: false, hasError: false, hasMsg: ''
+        });
+    }
+
     /**
    * Build API url.
    * @param url
@@ -92,9 +95,22 @@ private onSubscribeSuccess(res: Response): void {
         return environment.API_ENDPOINT + url;
     }
 
+    private onCatch(error: any, caught: Observable<any>): Observable<any> {
+        console.info("Something went wrong", error);
+        return Observable.of(error);
+    }
+
+    private onSubscribeError(error: any): void {
+        console.log('Something Went wrong while subscribing', error);
+
+        this.loading.next({
+        loading: false, hasError: true, hasMsg: 'Something went wrong'
+        });
+    }
+
     private onFinally(): void {
         this.responseInterceptor();
     }
-  }
+}
 
 
