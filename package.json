@@ -32,6 +32,7 @@
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "core-js": "^2.4.1",
+    "firebase-functions": "^0.5.7",
     "font-awesome": "^4.7.0",
     "immutable": "^3.8.1",
     "live-server": "^1.2.0",
