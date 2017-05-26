@@ -1,5 +1,6 @@
 
 import { environment } from './../environments/environment';
+import { productReducer } from './product/reducers/product-reducer';
 
 /**
  * combineReducers is another useful metareducer that takes a map of reducer
@@ -31,7 +32,7 @@ import { compose } from '@ngrx/core/compose';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 const reducers = {
-
+  products: productReducer,
 };
 
 export const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);

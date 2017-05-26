@@ -10,14 +10,16 @@ import { Action } from '@ngrx/store';
 @Injectable()
 export class ProductEffects {
 
-    constructor(private actions$: Actions,
-        private productService: ProductService,
-        private productActions: ProductActions) { }
+  constructor(
+    private actions$: Actions,
+    private productService: ProductService,
+    private productActions: ProductActions
+  ) { }
 
-    // tslint:disable-next-line:member-ordering
-    @Effect()
-    GetAllProducts$: Observable<Action> = this.actions$
-        .ofType(ProductActions.GET_ALL_PRODUCTS)
-        .switchMap((action: Action) => this.productService.getProducts())
-        .map((data: any) => this.productActions.getAllProductsSuccess({ products: data }));
+  // tslint:disable-next-line:member-ordering
+  @Effect()
+  GetAllProducts$: Observable<Action> = this.actions$
+  .ofType(ProductActions.GET_ALL_PRODUCTS)
+  .switchMap((action: Action) => this.productService.getProducts())
+  .map((data: any) => this.productActions.getAllProductsSuccess({ products: data }));
 }

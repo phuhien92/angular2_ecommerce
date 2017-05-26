@@ -7,11 +7,13 @@ import { RouterModule } from '@angular/router';
 // components
 import { AppComponent } from './app.component';
 
-//Routes 
+//Routes
 import { routes } from './app.routes';
 
 // Modules
+import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { HomeModule } from './home/home.module';
 import { reducer } from './app.reducers';
@@ -32,11 +34,13 @@ import 'rxjs/add/observable/of';
   imports: [
     RouterModule.forRoot(routes),
     StoreModule.provideStore(reducer),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     BrowserModule,
     FormsModule,
     HttpModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

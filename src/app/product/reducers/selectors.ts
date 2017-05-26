@@ -10,9 +10,9 @@ export function getProductState(state: AppState): ProductState {
   return state.products;
 }
 
-export function fetchProducts(state): ProductState {
+export function fetchProducts(state:ProductState) {
     const ids = state.productIds.toJS();
-    console.log(ids)
+    console.log("IDs",ids)
     const productEntities = state.productEntities.toJS();
     return ids.map(id => productEntities[id]);
 }
