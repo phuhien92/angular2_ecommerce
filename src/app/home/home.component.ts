@@ -1,3 +1,8 @@
+import { environment } from './../../environments/environment';
+import { ProductActions } from './../product/actions/product-actions';
+import { AppState } from './../interfaces'; 
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
@@ -7,6 +12,8 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
+    products$: Observable<any>;
+
     constructor(
 
     ) {

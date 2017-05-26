@@ -4,6 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: '', 
-        loadChildren: './home/index#HomeModule'
+        loadChildren: './home/home.module#HomeModule'
     },
 ]
