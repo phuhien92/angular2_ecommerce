@@ -9,11 +9,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class ContentComponent implements OnInit {
     @Input() products: Product[];
 
-    constructor(
-
-    ) {
-        console.log(this.products)
-    }
+    constructor() {}
 
     ngOnInit() {}
 

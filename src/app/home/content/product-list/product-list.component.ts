@@ -16,7 +16,6 @@ export class ProductListComponent implements OnInit {
     constructor(
         private store: Store<AppState>
     ) {
-        console.log(this.products)
     }
 
     ngOnInit() {}

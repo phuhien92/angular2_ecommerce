@@ -6,13 +6,11 @@ import { Map, List, fromJS } from 'immutable';
 
 // Base product state selector function
 export function getProductState(state: AppState): ProductState {
-  console.log("State",state)
   return state.products;
 }
 
 export function fetchProducts(state:ProductState) {
     const ids = state.productIds.toJS();
-    console.log("IDs",ids)
     const productEntities = state.productEntities.toJS();
     return ids.map(id => productEntities[id]);
 }

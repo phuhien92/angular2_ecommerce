@@ -10,7 +10,6 @@ export class ProductActions {
     }
 
     getAllProductsSuccess(products: any): Action {
-        console.log(ProductActions.GET_ALL_PRODUCTS_SUCCESS, products)
         return {
             type: ProductActions.GET_ALL_PRODUCTS_SUCCESS,
             payload: products
