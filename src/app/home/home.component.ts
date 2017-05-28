@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
         private store: Store<AppState>,
         private actions: ProductActions
     ) {
+        this.store.subscribe(() => console.info("Home Component Store changed", this.store));
         this.store.dispatch(this.actions.getAllProducts());
         this.products$ = this.store.select(getProducts);
     }
