@@ -9,7 +9,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 </p>
 
 ## Mock & Development server
-Run `npm run start-mock` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
+Run `npm run start-mock` for a mock server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
 ## Development server
 Run `npm start` for a dev server. Navigate to `http://localhost:3002/`. The app will automatically reload if you change any of the source files.
