@@ -16,6 +16,7 @@ import { CoreModule } from './core/core.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { HomeModule } from './home/home.module';
+import { LayoutModule } from './layout/index';
 import { reducer } from './app.reducers';
 
 // adding rx operators
@@ -40,7 +41,8 @@ import 'rxjs/add/observable/of';
     HttpModule,
     CoreModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
