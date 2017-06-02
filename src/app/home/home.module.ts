@@ -2,6 +2,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ProductActions } from './../product/actions/product-actions';
+import { SharedModule } from './../shared/shared.module';
+
 
 // Components
 import { HomeComponent } from './home.component';

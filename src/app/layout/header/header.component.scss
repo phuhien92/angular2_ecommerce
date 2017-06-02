@@ -8,4 +8,14 @@
             height: 46px;
         }
     }
+
+    ul {
+      li {
+        display: inline-block;
+      }
+    }
+}
+
+.pull-left {
+  float: left;
 }

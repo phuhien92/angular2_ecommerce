@@ -8,6 +8,7 @@ import { ProductService } from './../core/services/product.service';
 
 // Components
 import { ProductComponent } from './product.component';
+import { ProductDetailPageComponent } from './product-detail-page/product-detail-page.component';
 
 // Routes
 import { ProductRoutes as routes } from './product.routes';
@@ -21,12 +22,12 @@ import { ProductEffects } from './effects/product.effects';
   declarations: [
     // components
     ProductComponent,
-    
+    ProductDetailPageComponent
     // pipes
   ],
   exports: [
     // components
-    
+
   ],
   imports: [
     RouterModule.forChild(routes),

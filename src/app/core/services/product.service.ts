@@ -6,10 +6,15 @@ import { Injectable } from '@angular/core';
 export class ProductService {
     constructor(private http: HttpService) {
 
-    }   
+    }
 
     getProducts(): any {
         return this.http.get('/spree/api/v1/products')
         .map(res => res.json());
+    }
+
+    getProduct(id: string): Observable<any> {
+      return this.http.get('/spree/api/v1/products/${id}')
+      .map(res => res.json());
     }
 }
