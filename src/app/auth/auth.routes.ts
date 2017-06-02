@@ -1,7 +1,9 @@
-// import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from './components/login/login.component';
 
 export const AuthRoutes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { 
+    path: 'login', 
+    component: LoginComponent 
+  },
 ];

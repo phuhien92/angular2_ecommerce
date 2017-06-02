@@ -42,11 +42,11 @@ export class HttpService extends Http {
       });
   }
 
-    /**
-       * Request options.
-       * @param options
-       * @returns {RequestOptionsArgs}
-       */
+    /*
+     * Request options.
+     * @param options
+     * @returns {RequestOptionsArgs}
+     */
 
     private requestOptions(options?: RequestOptionsArgs): RequestOptionsArgs {
         if (options == null) {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AuthModule } from './auth/auth.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import 'rxjs/add/observable/of';
     CoreModule,
     HomeModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
