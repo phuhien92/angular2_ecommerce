@@ -9,7 +9,7 @@
       [src]="getProductImageUrl(product.master.images[0]?.large_url)">
       <div class="product-productMetaInfo">
         <div class="product-brand">{{ product.name }}</div>
-        <h2 class="product-product">{{ product.description }}</h2>
+        <p class="product-product">{{ product.description }}</p>
         <div class="product-price">
           <span>
             <!-- Discounted price -->
@@ -22,19 +22,6 @@
         <!-- Product Size --><!--<div class="product-sizes">Sizes: S, M, L, XL, XXL</div>-->
       </div>
     </a>
-    <div class="product-sizeDisplayDiv">
-      <div class="product-sizeDisplayHeader">
-        <span>Select a size</span>
-        <span class="myntraweb-sprite product-sizeDisplayRemoveMark sprites-remove"></span>
-      </div>
-      <div class="product-sizeButtonsContaier">
-        <button class="product-sizeButton">S</button>
-        <button class="product-sizeButton">M</button>
-        <button class="product-sizeButton">L</button>
-        <button class="product-sizeButton">XL</button>
-        <button class="product-sizeButton">XXL</button>
-      </div>
-    </div>
   </li>
 
 </ul>
