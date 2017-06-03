@@ -1,24 +1,29 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 
-// For Temp Puropose
-// TODO: Remove this from here
 import { ProductService } from './../core/services/product.service';
 
 // Components
 import { ProductComponent } from './product.component';
 import { ProductDetailPageComponent } from './product-detail-page/product-detail-page.component';
 
-// Routes
-import { ProductRoutes as routes } from './product.routes';
-
 // Effects
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './effects/product.effects';
 
+const productRouting: ModuleWithProviders = RouterModule.forChild([
+  {
+    path: 'product/:id',
+    component: ProductDetailPageComponent,
+    pathMatch: 'full'
+  }
+]);
 
 @NgModule({
+  imports: [
+    productRouting,
+  ],
   declarations: [
     // components
     ProductComponent,
@@ -27,11 +32,9 @@ import { ProductEffects } from './effects/product.effects';
   ],
   exports: [
     // components
+    ProductDetailPageComponent
+  ],
 
-  ],
-  imports: [
-    RouterModule.forChild(routes),
-  ],
   providers: [
   ]
 })

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
-
+import { ProductModule } from './product/product.module';
 // components
 import { AppComponent } from './app.component';
 
@@ -34,7 +34,7 @@ import 'rxjs/add/observable/of';
     AppComponent
   ],
   imports: [
-    RouterModule.forRoot(routes, {useHash: true}),
+    RouterModule.forRoot([], {useHash: true}),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     BrowserModule,
@@ -44,7 +44,8 @@ import 'rxjs/add/observable/of';
     HomeModule,
     SharedModule,
     LayoutModule,
-    AuthModule
+    AuthModule,
+    ProductModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

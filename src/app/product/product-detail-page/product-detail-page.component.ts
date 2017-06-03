@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import { Product } from './../../core/models/product';
 import { ProductService } from './../../core/services/product.service';
+
 @Component({
   selector: 'app-product-detail-page',
   templateUrl: './product-detail-page.component.html',
