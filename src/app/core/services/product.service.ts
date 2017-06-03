@@ -14,7 +14,7 @@ export class ProductService {
     }
 
     getProduct(id: string): Observable<any> {
-      return this.http.get('/spree/api/v1/products/${id}')
+      return this.http.get('/spree/api/v1/products/'+id)
       .map(res => res.json());
     }
 }

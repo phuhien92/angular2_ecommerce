@@ -21,14 +21,19 @@ export class ProductDetailPageComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService
   ) {
+
+  }
+  ngOnInit() {
     this.actionsSubscription = this.route.params.subscribe(
       (params: any) => {
         this.productId = params['id'];
         this.productService
             .getProduct(this.productId)
-            .subscribe(res => this.product$ = res);
+            .subscribe((res) => {
+              this.product$ = res;
+              console.log(this.product$);
+            });
       }
     )
   }
-  ngOnInit() {}
 }
