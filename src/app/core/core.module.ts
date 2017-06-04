@@ -3,6 +3,7 @@ import { HttpModule, XHRBackend, RequestOptions, Http } from '@angular/http';
 
 //services
 import { ProductService } from './services/product.service';
+import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http';
 
 import { EffectsModule } from '@ngrx/effects';
@@ -31,6 +32,7 @@ export function httpInterceptor(
     EffectsModule.run(ProductEffects),
   ],
   providers: [
+    AuthService,
     ProductService,
     HttpService,
     {
