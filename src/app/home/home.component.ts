@@ -5,7 +5,7 @@ import { getProducts } from './../product/reducers/selectors';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { ApiService } from './../core/services/api.service';
+import { ProductService } from './../core/services/product.service';
 
 @Component({
     selector: 'app-home',
@@ -19,12 +19,12 @@ export class HomeComponent implements OnInit {
     constructor(
         private store: Store<AppState>,
         private actions: ProductActions,
-        private apiService: ApiService
+        private productService: ProductService
     ) {
         // this.store.subscribe(() => console.info("Home Component Store changed", this.store));
         // this.store.dispatch(this.actions.getAllProducts());
         // this.products$ = this.store.select(getProducts);
-
+        // this.productService.getProducts()
     }
 
     ngOnInit() {
