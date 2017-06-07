@@ -4,6 +4,7 @@ import { HttpModule, XHRBackend, RequestOptions, Http } from '@angular/http';
 //services
 import { ProductService } from './services/product.service';
 import { HttpService } from './services/http';
+import { ApiService } from './services/api.service';
 
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from '../product/effects/product.effects';
@@ -31,6 +32,7 @@ export function httpInterceptor(
     EffectsModule.run(ProductEffects),
   ],
   providers: [
+    ApiService,
     ProductService,
     HttpService,
     {
