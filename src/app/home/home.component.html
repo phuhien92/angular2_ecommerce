@@ -1,8 +1,8 @@
 <div class="col-xs-12">
 
-    <div class="col-xs-9">
-
-      <app-content [products]="products$ | async"></app-content>
+    <div class="col-xs-9" *ngIf="products$">
+      <app-content [products]="products$"></app-content>
+      <!-- <app-content [products]="products$ | async"></app-content> -->
 
     </div>
 
