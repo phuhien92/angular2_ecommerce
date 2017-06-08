@@ -34,7 +34,7 @@ import 'rxjs/add/observable/of';
     AppComponent
   ],
   imports: [
-    RouterModule.forRoot([], {useHash: true}),
+    RouterModule.forRoot([]),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     BrowserModule,

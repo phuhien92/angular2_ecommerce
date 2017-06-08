@@ -14,12 +14,11 @@ export class ProductService {
 
     getProducts(): any {
       console.log("get products")
-      return this.http.get('/spree/api/v1/product')
+      return this.http.get('/spree/api/v1/products')
       .map(res => res.products);
     }
 
     getProduct(id: string): Observable<any> {
       return this.http.get('/spree/api/v1/products/'+id)
-      .map(res => res.json());
     }
 }

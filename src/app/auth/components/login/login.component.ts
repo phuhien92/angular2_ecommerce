@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       'email': [email, Validators.required],
       'password': [password, Validators.required]
     });
-    
+
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   }
 
-  onsubmit() {
+  onSubmit() {
     const values = this.signInForm.value;
     const keys = Object.keys(values);
 

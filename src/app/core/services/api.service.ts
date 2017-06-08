@@ -11,6 +11,7 @@ import { Observable }  from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class ApiService {
@@ -45,14 +46,17 @@ export class ApiService {
   get(path: string, params: URLSearchParams = new URLSearchParams() ): Observable<any> {
     const env = environment.API_ENDPOINT;
     const url = env + path;
-
+    console.log(url)
     this.requestInterceptor();
     return this.http.get(url, { headers: this.setHeaders(), search: params})
     .catch(this.formatErrors)
-    .map((res: Response) => {
-      console.log(res)
-      return res.json();
-    });
+    .do((res: Response) => {
+      this.onSubscribeSuccess(res);
+    }, (error: any) => {
+      console.log("error")
+      this.onSubscribeError(error);
+    })
+    .map((res: Response) => res.json());
   }
 
   put(path: string, body: Object = {}): Observable<any> {
@@ -73,7 +77,14 @@ export class ApiService {
     const env = environment.API_ENDPOINT;
     return this.http.delete('${env}${path}', { headers: this.setHeaders()})
     .catch(this.formatErrors)
-    .map((res: Response) => res.json());
+    .do((res: Response) => {
+      console.log("success")
+      this.onSubscribeSuccess(res);
+    }, (error: any) => {
+      console.log("error")
+      this.onSubscribeError(error);
+    })
+    // .map((res: Response) => res.json());
   }
 
   private requestInterceptor(): void {
