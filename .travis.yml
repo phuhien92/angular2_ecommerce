@@ -9,7 +9,7 @@ branches:
     - master
 
 before_script:
-  - brew install yarn
+
 scripts:
   - npm run build
 
