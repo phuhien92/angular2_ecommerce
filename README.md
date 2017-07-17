@@ -2,12 +2,6 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli)
 
-<p align="center">
-  <a href="https://angular2-516a4.firebaseapp.com/" target='_blank'>
-    <img alt="Angular2 Logo" title="Logo" src="http://teachstone.com/wp-content/themes/enfold-child/images/myteachstone/icon-live-demo.png" width="100">
-  </a>
-</p>
-
 ## Mock & Development server
 Run `npm run start-mock` for a mock server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
